@@ -52,9 +52,9 @@ GammaMatrix(-mu) # for gamma_mu
 ~~~
 
 ### Gamma Matrix calculator, GC 
-Useing GC is a object to represent $\bar u(p_1)H u(p_2)$, 
+Useing GC is a object to represent $\bar u(p_1)\gamma^\mu(\gamma^5+1)u(p_2)$, 
 ~~~ python
-GC(u(p_1),H,u(p_2))
+GC(u(p_1),GammaMatrix(p1)(GammaMatrix5+S.One),u(p_2))
 ~~~
 you can do the complex conjuagation
 ~~~ python
