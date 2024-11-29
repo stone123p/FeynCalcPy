@@ -28,13 +28,15 @@ G5=GammaMatrix5();
 PL=(S.One-G5)/2
 PR=(S.One+G5)/2
 ~~~
-### Spinors, GammaSlash, GammaMatrix
+### Spinors, GammaSlash
 To define a Dirac spinor with mass $m1$ and momentum $p1$ and polarization $n$, 
 ~~~ python
 p_1,m_1,n=symbols('p_1,m_1,n')
 u1=Spinor(p_1,m_1,GammaSlash(n))
 ~~~
-where we use SymPy.symbols to define p_mu,m_mu,n to do the algebra. And GammaSlash(n) is meant $\gamma^\alpha n_\alpha$. To define the gamma matrix with specific superscript index, $\gamma^\mu$, you can 
+where we use SymPy.symbols to define p_mu,m_mu,n to do the algebra. And GammaSlash(n) is meant $\gamma^\alpha n_\alpha$. 
+### GammaMatrix
+To define the gamma matrix with specific superscript index, $\gamma^\mu$, you can 
 ~~~ python
 GammaMatrix(mu) # for gamma^mu
 ~~~
@@ -42,6 +44,8 @@ on the other hands, you can also define the gamma matrix with subscript, $\gamma
 ~~~ python
 GammaMatrix(-mu) # for gamma_mu
 ~~~
+### Gamma Matrix calculator, GC 
+
 ### Effective Hamiltonian 
 You can follow your requirement to wirte done the effective Hamiltonian, for intance, for a four fermion interaction, the Hamiltonian
 ~~~ math
