@@ -58,10 +58,10 @@ g2=GammaMatrix(nu)
 conj_g1=GammaMatrix(-mu)
 conj_g2=GammaMatrix(-nu)
 
-u1=Spinor(p_e,m_e,0)
-u2=Spinor(p_nu,0,0)
-u3=Spinor(p_nub,0,0)
-u4=Spinor(p_mu,m_mu,GammaSlash(n))
+u1=Spinor(p_1,m_1,0)
+u2=Spinor(p_2,m_2,0)
+u3=Spinor(p_3,m_3,0)
+u4=Spinor(p_4,m_4,0)
 Hv1=[GC(u1,g1*PL,u2),GC(u3,conj_g1*PL,u4)]
 Hv2=[GC(u1,g2*PL,u2),GC(u3,conj_g2*PL,u4)]
 ~~~
