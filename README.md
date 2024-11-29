@@ -81,7 +81,8 @@ The function trace(...) is also a function in FeynCalcPy.
 ~~~ python
 >>> trace(GammaMatrix(mu)GammaMatrix(nu))
 ~~~
-$matric^mu^nu$
+The output of the above snippet is as follows −
+$4matric^{\mu}^{\nu}$
 
 ### Effective Hamiltonian 
 You can follow your requirement to wirte done the effective Hamiltonian, for intance, for a four fermion interaction, the Hamiltonian
