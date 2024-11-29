@@ -35,6 +35,6 @@ p_mu,m_mu,n=symbols('p_mu,m_mu,n')
 u=Spinor(p_mu,m_mu,GammaSlash(n))
 ~~~
 where we use SymPy.symbols to define p_mu,m_mu,n to do the algebra. And GammaSlash(n) is one of object in the FeynCalcPy defined by
-\[
+$
   \text{GammaSlash(n)}=\gamma_\nu n^\nu
-]\
+$
