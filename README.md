@@ -35,6 +35,10 @@ p_1,m_1,n=symbols('p_1,m_1,n')
 u1=Spinor(p_1,m_1,GammaSlash(n))
 ~~~
 where we use SymPy.symbols to define p_mu,m_mu,n to do the algebra. And GammaSlash(n) is meant $\gamma^\alpha n_\alpha$. 
+~~~ python
+>>> GammaSlash(n)
+gs(n)
+~~~
 ### GammaMatrix
 To define the gamma matrix with specific superscript index, $\gamma^\mu$, you can 
 ~~~ python
@@ -47,14 +51,17 @@ GammaMatrix(-mu) # for gamma_mu
 ### Gamma Matrix calculator, GC 
 Useing GC is a object to represent $\bar u(p_1)H u(p_2)$, 
 ~~~ python
- GC(u(p_1),H,u(p_2))
+GC(u(p_1),H,u(p_2))
 ~~~
 you can do the complex conjuagation
 ~~~ python
- GC(u(p_1),H,u(p_2)).conj() 
+GC(u(p_1),H,u(p_2)).conj() 
 ~~~
-it will become $\bar u(p_2)H^\dagger(\gamma^5\to-\gamma^5) u(p_1)$. It supports the multiplication between GC. It returns the differnt type of reult depend on the given spinors.
-
+it will become $\bar u(p_2)H^\dagger(\gamma^5\to-\gamma^5) u(p_1)$. It supports the multiplication between GC. It returns the differnt type of reult depend on the given spinors. For example, If one of momentum of spinor are the same and contract to each others, it will automatically do projections with respect to the given spinor
+~~~ python
+>>> GC(u(p_1),H1,u(p_2))*GC(u(p_2),H2,u(p_3))
+GC(u(p_1),H1*(gs(p2)+m2)*H2,u(p_3))
+~~~
 ### Effective Hamiltonian 
 You can follow your requirement to wirte done the effective Hamiltonian, for intance, for a four fermion interaction, the Hamiltonian
 ~~~ math
