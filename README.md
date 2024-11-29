@@ -93,11 +93,32 @@ The output of the above snippet is as follows
 ~~~ math
 4 ((-1)metric^{\mu\alpha}metric^{\nu\beta}+metric^{\mu\beta}metric^{\nu\alpha}+metric^{\mu\nu}metric^{\beta\alpha})
 ~~~
+~~~
 >>> trace(GammaMatrix5*GammaMatrix(mu)*GammaMatrix(nu)*GammaMatrix(alpha)*GammaMatrix(beta))
 ~~~
 The output of the above snippet is as follows 
 ~~~ math
-4i(\epsilon^{\mu\nu\alpha\beta})
+4i\epsilon^{\mu\nu\alpha\beta}
+~~~
+The GammaSlash object can also participate with the trace function, for example
+~~~
+>>> p = symbols('p')
+>>> trace(GammaMatrix(mu)*GammaSlash(p))
+~~~
+The output of the above snippet is as follows 
+~~~ math
+ 4 metric^{\mu L_0}p_{L_0}
+~~~
+you can use contract_metric to simplify futher
+~~~
+>>> p = symbols('p')
+>>> Lorentz = TensorIndexType('Lorentz', dummy_name='L', dim=4)
+>>> Lg = Lorentz.metric
+>>> trace(GammaMatrix(mu)*GammaSlash(p)).contract_metric(Lg)
+~~~
+The output of the above snippet is as follows 
+~~~ math
+ 4p^\mu
 ~~~
 ### Effective Hamiltonian 
 You can follow your requirement to wirte done the effective Hamiltonian, for intance, for a four fermion interaction, the Hamiltonian
