@@ -57,13 +57,16 @@ Useing GC is a object to represent $\bar u(p_1)\gamma^\mu\gamma^\nu(\gamma^5+1)u
 >>> mu,nu = tensor_indices('mu,nu', Lorentz)
 >>> G5=GammaMatrix5();
 >>> GC(u(p_1),GammaMatrix(mu)*GammaMatrix(nu)*(G5+S.One),u(p_2))
-GC(u(p_1)\gamma^mu*GammaMatrix(nu)*(G5+S.One),u(p_2))
+GC(u(p_1),gamma^mu*gamma^nu*(gamma^5+1),u(p_2))
 ~~~
 you can do the complex conjuagation
 ~~~ python
-GC(u(p_1),H,u(p_2)).conj() 
+>>> y=GC(u(p_1),GammaMatrix(mu)*GammaMatrix(nu)*(G5+S.One),u(p_2)).conj()
+>>> y
+GC(u(p_2),(G5-S.One)*GammaMatrix(nu)*GammaMatrix(mu),u(p_1))
 ~~~
-it will become $\bar u(p_2)H^\dagger(\gamma^5\to-\gamma^5) u(p_1)$. It supports the multiplication between GC. It returns the differnt type of reult depend on the given spinors. For example, If one of momentum of spinor are the same and contract to each others, it will automatically do projections with respect to the given spinor
+
+It supports the multiplication between GC. It returns the differnt type of reult depend on the given spinors. For example, If one of momentum of spinor are the same and contract to each others, it will automatically do projections with respect to the given spinor
 ~~~ python
 >>> GC(u(p_1),H1,u(p_2))*GC(u(p_2),H2,u(p_3))
 GC(u(p_1),H1*(gs(p_2)+m2)*H2,u(p_3))
@@ -74,7 +77,11 @@ If two momentum contractes respectively, it can do the trace automatically
 trace((gs(p_1)+m_1)*H1*(gs(p_2)+m_2)*H2)
 ~~~
 ### Trace 
-The function trace(...) is also a function in FeynCalcPy
+The function trace(...) is also a function in FeynCalcPy.
+~~~ python
+>>> trace(GammaMatrix(mu)GammaMatrix(nu))
+~~~
+$matric^mu^nu$
 
 ### Effective Hamiltonian 
 You can follow your requirement to wirte done the effective Hamiltonian, for intance, for a four fermion interaction, the Hamiltonian
