@@ -28,6 +28,7 @@ G5=GammaMatrix5();
 PL=(S.One-G5)/2
 PR=(S.One+G5)/2
 ~~~
+
 ### Spinors, GammaSlash
 To define a Dirac spinor with mass $m1$ and momentum $p1$ and polarization $n$, 
 ~~~ python
@@ -39,6 +40,7 @@ where we use SymPy.symbols to define p_mu,m_mu,n to do the algebra. And GammaSla
 >>> GammaSlash(n)
 gs(n)
 ~~~
+
 ### GammaMatrix
 To define the gamma matrix with specific superscript index, $\gamma^\mu$, you can 
 ~~~ python
@@ -48,6 +50,7 @@ on the other hands, you can also define the gamma matrix with subscript, $\gamma
 ~~~ python
 GammaMatrix(-mu) # for gamma_mu
 ~~~
+
 ### Gamma Matrix calculator, GC 
 Useing GC is a object to represent $\bar u(p_1)H u(p_2)$, 
 ~~~ python
@@ -62,6 +65,14 @@ it will become $\bar u(p_2)H^\dagger(\gamma^5\to-\gamma^5) u(p_1)$. It supports 
 >>> GC(u(p_1),H1,u(p_2))*GC(u(p_2),H2,u(p_3))
 GC(u(p_1),H1*(gs(p_2)+m2)*H2,u(p_3))
 ~~~
+If two momentum contractes respectively, it can do the trace automatically
+~~~ python
+>>> GC(u(p_1),H1,u(p_2))*GC(u(p_2),H2,u(p_1))
+trace((gs(p_1)+m_1)*H1*(gs(p_2)+m_2)*H2)
+~~~
+### Trace 
+The function trace(...) is also a function in FeynCalcPy
+
 ### Effective Hamiltonian 
 You can follow your requirement to wirte done the effective Hamiltonian, for intance, for a four fermion interaction, the Hamiltonian
 ~~~ math
