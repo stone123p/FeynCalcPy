@@ -120,6 +120,7 @@ The output of the above snippet is as follows
 ~~~ math
  4p^\mu
 ~~~
+where $p^\mu$ is a sympy.tensor.Tensor object 
 ### Effective Hamiltonian 
 You can follow your requirement to wirte done the effective Hamiltonian, for intance, for a four fermion interaction, the Hamiltonian
 ~~~ math
