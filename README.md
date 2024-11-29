@@ -28,10 +28,17 @@ G5=GammaMatrix5();
 PL=(S.One-G5)/2
 PR=(S.One+G5)/2
 ~~~
-### Spinors
+### Spinors, GammaSlash, GammaMatrix
 To define a Dirac spinor with mass $m$ and momentum $p$ and polarization $n$, 
 ~~~ python
 p_mu,m_mu,n=symbols('p_mu,m_mu,n')
 u=Spinor(p_mu,m_mu,GammaSlash(n))
 ~~~
-where we use SymPy.symbols to define p_mu,m_mu,n to do the algebra. And GammaSlash(n) is meant $\slashed{n}$
+where we use SymPy.symbols to define p_mu,m_mu,n to do the algebra. And GammaSlash(n) is meant $\slashed{n}$. To define the gamma matrix with specific superscript index $\gamma^\mu$, we can 
+~~~ python
+GammaMatrix(mu) # for gamma^mu
+~~~
+on the other hands, you can also define the gamma matrix with subscript $\gamma_\mu$
+~~~ python
+GammaMatrix(-mu) # for gamma_mu
+~~~
