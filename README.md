@@ -34,4 +34,4 @@ To define a Dirac spinor with mass $m$ and momentum $p$ and polarization $n$,
 p_mu,m_mu,n=symbols('p_mu,m_mu,n')
 u=Spinor(p_mu,m_mu,GammaSlash(n))
 ~~~
-where we use SymPy.symbols to define p_mu,m_mu,n to do the algebra. And GammaSlash(n) is meant $\slashed n$
+where we use SymPy.symbols to define p_mu,m_mu,n to do the algebra. And GammaSlash(n) is meant $\slashed{n}$
