@@ -53,7 +53,8 @@ you can do the complex conjuagation
 ~~~ python
  GC(u(p_1),H,u(p_2)).conj() 
 ~~~
-it will become $\bar u(p_2)H^\dagger(\gamma^5\to-\gamma^5) u(p_1)$, 
+it will become $\bar u(p_2)H^\dagger(\gamma^5\to-\gamma^5) u(p_1)$. It supports the multiplication between GC. It return the differnt type of reult depend on the given spinors.
+
 ### Effective Hamiltonian 
 You can follow your requirement to wirte done the effective Hamiltonian, for intance, for a four fermion interaction, the Hamiltonian
 ~~~ math
