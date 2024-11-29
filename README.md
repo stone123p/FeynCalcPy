@@ -120,7 +120,9 @@ The output of the above snippet is as follows
 ~~~ math
  4p^\mu
 ~~~
-where $p^\mu$ is a [sympy.tensor.Tensor](https://docs.sympy.org/latest/modules/tensor/tensor.html) object 
+where $p^\mu$ is a [sympy.tensor.Tensor](https://docs.sympy.org/latest/modules/tensor/tensor.html) object.
+### Levi-Civita Symbol, Kronecker Delta and their symmetry
+
 ### Effective Hamiltonian 
 You can follow your requirement to wirte done the effective Hamiltonian, for intance, for a four fermion interaction, the Hamiltonian
 ~~~ math
