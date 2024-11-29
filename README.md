@@ -34,11 +34,11 @@ To define a Dirac spinor with mass $m$ and momentum $p$ and polarization $n$,
 p_mu,m_mu,n=symbols('p_mu,m_mu,n')
 u=Spinor(p_mu,m_mu,GammaSlash(n))
 ~~~
-where we use SymPy.symbols to define p_mu,m_mu,n to do the algebra. And GammaSlash(n) is meant $\gamma^\alpha n_\alpha$. To define the gamma matrix with specific superscript index $\gamma^\mu$, we can 
+where we use SymPy.symbols to define p_mu,m_mu,n to do the algebra. And GammaSlash(n) is meant $\gamma^\alpha n_\alpha$. To define the gamma matrix with specific superscript index, $\gamma^\mu$, you can 
 ~~~ python
 GammaMatrix(mu) # for gamma^mu
 ~~~
-on the other hands, you can also define the gamma matrix with subscript $\gamma_\mu$
+on the other hands, you can also define the gamma matrix with subscript, $\gamma_\mu$
 ~~~ python
 GammaMatrix(-mu) # for gamma_mu
 ~~~
