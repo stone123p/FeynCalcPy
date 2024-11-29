@@ -79,10 +79,20 @@ trace((gs(p_1)+m_1)*H1*(gs(p_2)+m_2)*H2)
 ### Trace 
 The function trace(...) is also a function in FeynCalcPy.
 ~~~ python
->>> trace(GammaMatrix(mu)GammaMatrix(nu))
+>>> trace(GammaMatrix(mu)*GammaMatrix(nu))
 ~~~
-The output of the above snippet is as follows −
-$4matric^{\mu}^{\nu}$
+The output of the above snippet is as follows 
+~~~ math
+4 metric^{\mu\nu}
+~~~ 
+
+~~~ python
+>>> trace(GammaMatrix(mu)*GammaMatrix(nu)*GammaMatrix(alpha)*GammaMatrix(beta))
+~~~
+The output of the above snippet is as follows 
+~~~ math
+4 ((-1)metric^{\mu\alpha}metric^{\nu\beta}+metric^{\mu\beta}metric^{\nu\alpha}+metric^{\mu\nu}metric^{\beta\alpha})
+~~~
 
 ### Effective Hamiltonian 
 You can follow your requirement to wirte done the effective Hamiltonian, for intance, for a four fermion interaction, the Hamiltonian
