@@ -45,10 +45,15 @@ on the other hands, you can also define the gamma matrix with subscript, $\gamma
 GammaMatrix(-mu) # for gamma_mu
 ~~~
 ### Gamma Matrix calculator, GC 
-Useing GC to do Gamma Matrix calculation like $\bar u(p_1)H u(p_2)$, 
+Useing GC is a object to represent $\bar u(p_1)H u(p_2)$, 
 ~~~ python
  GC(u(p_1),H,u(p_2))
 ~~~
+you can do the complex conjuagation
+~~~ python
+ GC(u(p_1),H,u(p_2)).conj() 
+~~~
+it will become $\bar u(p_2)H^\dagger u(p_1)$, 
 ### Effective Hamiltonian 
 You can follow your requirement to wirte done the effective Hamiltonian, for intance, for a four fermion interaction, the Hamiltonian
 ~~~ math
