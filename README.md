@@ -29,10 +29,10 @@ PL=(S.One-G5)/2
 PR=(S.One+G5)/2
 ~~~
 ### Spinors, GammaSlash, GammaMatrix
-To define a Dirac spinor with mass $m$ and momentum $p$ and polarization $n$, 
+To define a Dirac spinor with mass $m1$ and momentum $p1$ and polarization $n$, 
 ~~~ python
-p_mu,m_mu,n=symbols('p_mu,m_mu,n')
-u=Spinor(p_mu,m_mu,GammaSlash(n))
+p_1,m_1,n=symbols('p_1,m_1,n')
+u1=Spinor(p_1,m_1,GammaSlash(n))
 ~~~
 where we use SymPy.symbols to define p_mu,m_mu,n to do the algebra. And GammaSlash(n) is meant $\gamma^\alpha n_\alpha$. To define the gamma matrix with specific superscript index, $\gamma^\mu$, you can 
 ~~~ python
@@ -41,4 +41,29 @@ GammaMatrix(mu) # for gamma^mu
 on the other hands, you can also define the gamma matrix with subscript, $\gamma_\mu$
 ~~~ python
 GammaMatrix(-mu) # for gamma_mu
+~~~
+### Effective Hamiltonian 
+You can follow your requirement to wirte done the effective Hamiltonian, for intance, for a four fermion interaction, the Hamiltonian
+$$ 
+ H\sim (\bar u(p_1)\gamma^\mu L u(p_2))(\bar u(p_3)\gamma^\mu L u(p_4))
+$$.
+In order to calclate amplitude squared, you can follow
+~~~ python
+g1=GammaMatrix(mu)
+g2=GammaMatrix(nu)
+conj_g1=GammaMatrix(-mu)
+conj_g2=GammaMatrix(-nu)
+
+u1=Spinor(p_e,m_e,0)
+u2=Spinor(p_nu,0,0)
+u3=Spinor(p_nub,0,0)
+u4=Spinor(p_mu,m_mu,GammaSlash(n))
+Hv1=[GC(u1,g1*PL,u2),GC(u3,conj_g1*PL,u4)]
+Hv2=[GC(u1,g2*PL,u2),GC(u3,conj_g2*PL,u4)]
+~~~
+Then amplitude squared can be obtained by
+~~~ python
+Z1=Hs[0].conj()*Hv[0]
+Z2=Hs[1].conj()*Hv[1]
+Z3=Z1*Z2
 ~~~
