@@ -45,7 +45,7 @@ GammaMatrix(-mu) # for gamma_mu
 ### Effective Hamiltonian 
 You can follow your requirement to wirte done the effective Hamiltonian, for intance, for a four fermion interaction, the Hamiltonian
 ~~~ math
- H\sim (\bar u(p_1)\gamma^\mu L u(p_2))(\bar u(p_3)\gamma_\mu L u(p_4)).
+ H\sim (\bar u(p_1)\gamma^\mu L u(p_2))(\bar u(p_3)\gamma_\mu L u(p_4))+h.c. .
 ~~~ 
 In order to calclate amplitude squared, you can follow
 ~~~ python
