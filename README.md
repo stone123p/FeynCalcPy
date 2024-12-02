@@ -148,4 +148,7 @@ Z1=Hs[0].conj()*Hv[0]
 Z2=Hs[1].conj()*Hv[1]
 Z3=Z1*Z2
 ~~~
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3a3b7bc635dc9b3ebcf66e5a00ddb5481b6a1930
