@@ -1,4 +1,4 @@
-from sympy import symbols,diag,integrate,cos,sin,diag,pi,nsimplify,factor
+from sympy import symbols,S, Sdiag,integrate,cos,sin,diag,pi,nsimplify,factor
 from sympy.tensor.tensor import TensorIndexType, tensor_indices, tensor_heads
 
 from feyncalcpy.feynmanruls import *
