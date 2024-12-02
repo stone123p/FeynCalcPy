@@ -177,7 +177,7 @@ def Trace_Sigle(expandsion):
 
             if not isinstance(id0,TensorIndex):
                 p0 = tensor_heads(id0.name, [Lorentz])(-m0)
-                id1=m0
+                id0=m0
             if not isinstance(id1,TensorIndex):
                 p1 = tensor_heads(id1.name, [Lorentz])(-m1)
                 id1=m1
