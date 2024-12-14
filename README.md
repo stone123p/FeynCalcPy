@@ -129,7 +129,23 @@ You define a four dimensional LeviCivita tensor by runing
 ~~~
 ~~~ math
  \epsilon^{m_0m_1m_2m_3}
-~~~ 
+~~~
+It has some useful contraction, for examples
+~~~
+>>> m0,m1,m2,m3,m4,m5,m6 = tensor_indices('m0,m1,m2,m3,m4,m5,m6', Lorentz)
+>>> LeviCivitaT(m0,m1,m2,m3)*LeviCivitaT(-m0,-m1,-m4,-m5)
+~~~
+~~~ math
+ -2((-1)metric_{m5}^{m2}metric_{m4}^{m3}+metric_{m5}^{m3}metric_{m4}^{m2}))
+~~~
+or 
+~~~
+>>> m0,m1,m2,m3,m4,m5,m6 = tensor_indices('m0,m1,m2,m3,m4,m5,m6', Lorentz)
+>>> LeviCivitaT(m0,m1,m3,m4)*LeviCivitaT(-m0,-m1,-m3,-m5)
+~~~
+~~~ math
+ -6(metric_{m5}^{m4})
+~~~
 ### Effective Hamiltonian 
 You can follow your requirement to write done the effective Hamiltonian, for instance, for a four fermion interaction, the Hamiltonian
 ~~~ math
