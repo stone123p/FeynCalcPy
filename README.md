@@ -131,7 +131,7 @@ You define a four dimensional LeviCivita tensor by runing
  \epsilon^{m_0m_1m_2m_3}
 ~~~
 It has some useful contraction, for examples
-~~~
+~~~python
 >>> m0,m1,m2,m3,m4,m5,m6 = tensor_indices('m0,m1,m2,m3,m4,m5,m6', Lorentz)
 >>> LeviCivitaT(m0,m1,m2,m3)*LeviCivitaT(-m0,-m1,-m4,-m5)
 ~~~
@@ -139,13 +139,23 @@ It has some useful contraction, for examples
  -2((-1)metric_{m5}^{m2}metric_{m4}^{m3}+metric_{m5}^{m3}metric_{m4}^{m2}))
 ~~~
 or 
-~~~
+~~~python
 >>> m0,m1,m2,m3,m4,m5,m6 = tensor_indices('m0,m1,m2,m3,m4,m5,m6', Lorentz)
 >>> LeviCivitaT(m0,m1,m3,m4)*LeviCivitaT(-m0,-m1,-m3,-m5)
 ~~~
 ~~~ math
  -6(metric_{m5}^{m4})
 ~~~
+Because of that LeviCivitaT is a anti-symmetry tensor, the contraction with a symmetry tensor leads to 0, forexample
+~~~ python
+>>>T=tensor_heads('T', [Lorentz]*2,TensorSymmetry.fully_symmetric(2))
+>>>t=(LeviCivitaT('LeviCivita',self_indices=(-m0,-m1,-m3,-m5))*T(m0,m1))
+>>>t
+~~~
+~~~ 
+\epsilon_{L0L1m3,m5}T^{L0L1}
+~~~
+you can use, {.canon_bp()}[https://docs.sympy.org/latest/modules/tensor/tensor.html], canonicalization under monoterm symmetries.
 ### Effective Hamiltonian 
 You can follow your requirement to write done the effective Hamiltonian, for instance, for a four fermion interaction, the Hamiltonian
 ~~~ math
