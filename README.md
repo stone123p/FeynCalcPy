@@ -155,7 +155,11 @@ Because of that LeviCivitaT is a anti-symmetry tensor, the contraction with a sy
 ~~~ 
 \epsilon_{L0L1m3,m5}T^{L0L1}
 ~~~
-you can use, {.canon_bp()}[https://docs.sympy.org/latest/modules/tensor/tensor.html], canonicalization under monoterm symmetries.
+you can use, [.canon_bp()]{https://docs.sympy.org/latest/modules/tensor/tensor.html}, canonicalization under monoterm symmetrie to canonicalize:
+~~~ python
+>>>t.canon_bp()
+~~~
+0
 ### Effective Hamiltonian 
 You can follow your requirement to write done the effective Hamiltonian, for instance, for a four fermion interaction, the Hamiltonian
 ~~~ math
