@@ -122,7 +122,14 @@ The output of the above snippet is as follows
 ~~~
 where $p^\mu$ is a [sympy.tensor.Tensor](https://docs.sympy.org/latest/modules/tensor/tensor.html) object.
 ### Levi-Civita Symbol, Kronecker Delta and their symmetry
-
+You define a four dimensional LeviCivita tensor by runing 
+~~~ python
+ >>> m0,m1,m2,m3,m4 = tensor_indices('m0,m1,m2,m3,m4', Lorentz)
+ >>> LC=LeviCivitaT('LeviCivita',self_indices=(m0,m1,m2,m3))
+~~~
+~~~ math
+ \epsilon^{m_0m_1m_2m_3}
+~~~ 
 ### Effective Hamiltonian 
 You can follow your requirement to write done the effective Hamiltonian, for instance, for a four fermion interaction, the Hamiltonian
 ~~~ math
