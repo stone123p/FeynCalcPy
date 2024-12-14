@@ -163,7 +163,7 @@ you can use, [.canon_bp()](https://docs.sympy.org/latest/modules/tensor/tensor.h
 ### Effective Hamiltonian 
 You can follow your requirement to write done the effective Hamiltonian, for instance, for a four fermion interaction, the Hamiltonian
 ~~~ math
- H\sim (\bar u(p_1)\gamma^\mu L u(p_2))(\bar u(p_3)\gamma_\mu L u(p_4))+h.c. .
+ H\sim (\bar u(p_1)\gamma^\mu L u(p_2))(\bar u(p_3)\gamma_\mu L u(p_4)).
 ~~~ 
 In order to calculate amplitude squared, you can follow
 ~~~ python
