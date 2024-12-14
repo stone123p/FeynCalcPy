@@ -121,7 +121,7 @@ The output of the above snippet is as follows
  4p^\mu
 ~~~
 where $p^\mu$ is a [sympy.tensor.Tensor](https://docs.sympy.org/latest/modules/tensor/tensor.html) object.
-### Levi-Civita Symbol, Kronecker Delta and their symmetry
+### Levi-Civita Symbol and their symmetry
 You define a four dimensional LeviCivita tensor by runing 
 ~~~ python
  >>> m0,m1,m2,m3,m4 = tensor_indices('m0,m1,m2,m3,m4', Lorentz)
