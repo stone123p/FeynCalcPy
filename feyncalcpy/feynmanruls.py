@@ -277,7 +277,7 @@ class LeviCivitaT(Tensor):
 def Evl(epx):
   if epx==0:
         return 0
-    return Add(*[reorder_with_eps(x) for x in epx.expand().args]).canon_bp().contract_metric(Lg)    
+  return Add(*[reorder_with_eps(x) for x in epx.expand().args]).canon_bp().contract_metric(Lg)    
 
 def replaceTensor(term,matrix_reps):
     tensors=list(filter(lambda x:isinstance(x,Tensor),term.args))
